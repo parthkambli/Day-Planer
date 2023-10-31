@@ -9,6 +9,10 @@ const booksSchema = new mongoose.Schema({
   Description: {
     type: String,
   },
+  Author: {
+    type: String,
+    required: [true, "Author name canot be empty! "],
+  },
   Resources: {
     type: String,
     required: [true, "Resources canot be empty! "],
