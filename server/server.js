@@ -9,6 +9,7 @@ connectDB();
 
 // Import routes
 import worksRoute from "./routes/works.js";
+import booksRoute from "./routes/books.js";
 
 // Express app
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/works", worksRoute);
+app.use("/api/books", booksRoute);
 
 const Port = process.env.PORT;
 
