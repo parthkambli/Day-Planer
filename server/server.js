@@ -7,11 +7,17 @@ dotenv.config({ path: "./config/config.env" });
 
 connectDB();
 
+// Import routes
+import worksRoute from "./routes/works.js";
+
 // Express app
 const app = express();
 
 // Middlewares
 app.use(express.json());
+
+// Routes
+app.use("/api/works", worksRoute);
 
 const Port = process.env.PORT;
 
