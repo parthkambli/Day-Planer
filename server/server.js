@@ -10,6 +10,7 @@ connectDB();
 // Import routes
 import worksRoute from "./routes/works.js";
 import booksRoute from "./routes/books.js";
+import workoutsRoute from "./routes/workouts.js";
 
 // Express app
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.json());
 // Routes
 app.use("/api/works", worksRoute);
 app.use("/api/books", booksRoute);
+app.use("/api/workouts", workoutsRoute);
 
 const Port = process.env.PORT;
 
