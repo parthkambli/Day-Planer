@@ -1,9 +1,8 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const worksSchema = new mongoose.Schema({
   Work_Title: {
     type: String,
-    required: true,
     required: [true, "work title canot be empty! "],
     unique: [true, "work title already exist! "],
   },

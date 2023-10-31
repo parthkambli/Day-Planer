@@ -6,8 +6,8 @@ import Works from "../models/works.js";
 // @route - GET /api/works
 // -----------------------------------------------------------------------------------------------
 export const getWorks = async (req, res) => {
+  const works = await Works.find({}).sort({ Priority: 1 });
   try {
-    const works = await Works.find({}).sort({ Priority: 1 });
     return res
       .status(200)
       .json({ success: true, count: works.length, works: works });
@@ -112,7 +112,7 @@ export const editWork = async (req, res) => {
 };
 
 // -----------------------------------------------------------------------------------------------
-// @desc - Edit work
+// @desc - Delete work
 // @route - PATCH /api/works/:id
 // -----------------------------------------------------------------------------------------------
 export const deleteWork = async (req, res) => {
@@ -131,6 +131,7 @@ export const deleteWork = async (req, res) => {
     }
 
     res.status(200).json({ success: true, work: work });
+    
   } catch (error) {
     return res.status(500).json({
       success: false,
