@@ -4,7 +4,7 @@ const workoutsSchema = new mongoose.Schema({
   Workout_Title: {
     type: String,
     required: [true, "Book name canot be empty! "],
-    unique: [true, "work title already exist! "],
+    unique: [true, "Book already exist! "],
   },
   Description: {
     type: String,
